@@ -420,19 +420,22 @@ void pattern21(int n)
     }
 }
 
-void pattern22(int n)
-{
-    for (int i = 0; i < 2 * n - 1; i++)
-    {
-        for (int j = 0; j < 2 * n - 1; j++)
-        {
+void pattern22(int n) {
+    int size = 2 * n - 1;
+
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+
             int top = i;
             int left = j;
-            int right = (2 * n - 2) - j;
-            int down = (2 * n - 2) - i;
-            cout << (n - min(min(top, down), min(left, right)));
+            int right = (size - 1) - j;
+            int bottom = (size - 1) - i;
+
+            int minDist = min(min(top, bottom), min(left, right));
+
+            cout << n - minDist << " ";
         }
-    cout<<endl;
+        cout << endl;
     }
 }
 
