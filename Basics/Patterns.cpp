@@ -336,87 +336,72 @@ void pattern18(int n)
     }
 }
 
-void pattern19(int n)
-{
+void pattern19(int n) {
     // Upper part
-    int initSpace = 0;
-    for (int i = 0; i < n; i++)
-    {
+    int spaces = 0;
+    for (int i = n; i >= 1; i--) {
         // Left stars
-        for (int j = 0; j <= n - i; j++)
-        {
+        for (int j = 1; j <= i; j++) 
             cout << "*";
-        }
+        
         // Spaces
-        for (int j = 0; j < initSpace; j++)
-        {
+        for (int j = 1; j <= spaces; j++) 
             cout << " ";
-        }
+        
         // Right stars
-        for (int j = 0; j <= n - i; j++)
-        {
+        for (int j = 1; j <= i; j++) 
             cout << "*";
-        }
-        initSpace += 2;
+        
+        spaces += 2;
         cout << endl;
     }
 
     // Lower part
-    int space = 2 * (n - 1);
-    for (int i = 0; i < n; i++)
-    {
+    spaces = 2 * n - 2;
+    for (int i = 1; i <= n; i++) {
         // Left stars
-        for (int j = 0; j <= i; j++)
-        {
-            cout << "*";
-        }
+        for (int j = 1; j <= i; j++) 
+            {  cout << "*";
+            }
         // Spaces
-        for (int j = 0; j < space; j++)
-        {
-            cout << " ";
-        }
+        for (int j = 1; j <= spaces; j++) 
+            {  cout << " ";
+            }
+        
         // Right stars
-        for (int j = 0; j <= i; j++)
-        {
-            cout << "*";
-        }
-        space -= 2;
+        for (int j = 1; j <= i; j++) 
+            { cout << "*";
+            }
+        
+        spaces -= 2;
         cout << endl;
     }
 }
 
-void pattern20(int n)
-{
-    int initSpace = 2 * n - 2;
-    for (int i = 1; i <= 2 * n - 1; i++)
-    {
-        //    stars
-        int stars = i;
-        if (i > n)
-            stars = 2 * n - i;
-        for (int j = 0; j <= stars; j++)
-        {
-            cout << "*";
-        }
+void pattern20(int n) {
+    int spaces = 2 * n - 2;
 
-        // space
-        for (int j = 1; j <= initSpace; j++)
-        {
+    for (int i = 1; i <= 2 * n - 1; i++) {
+        int stars = (i <= n) ? i : 2 * n - i;
+
+        // Left stars
+        for (int j = 1; j <= stars; j++) 
+            cout << "*";
+
+        // Spaces
+        for (int j = 1; j <= spaces; j++) 
             cout << " ";
-        }
 
-        // stars
-        for (int j = 0; j <= stars; j++)
-        {
+        // Right stars
+        for (int j = 1; j <= stars; j++) 
             cout << "*";
-        }
+
         cout << endl;
-        if (i < n)
-            initSpace -= 2;
-        else
-            initSpace += 2;
+        if (i < n) spaces -= 2;
+        else spaces += 2;
     }
 }
+
 
 void pattern21(int n)
 {
@@ -456,28 +441,28 @@ int main()
     int n;
     cout<<"enter n: ";
     cin >> n;
-    // pattern1(n);
-    // pattern2(n);
-    // pattern3(n);
-    // pattern4(n);
-    // pattern5(n);
-    // pattern6(n);
-    // pattern7(n);
-    //pattern8(n);
-    // pattern9(n);
-    // pattern10(n);
-    // pattern11(n);
-    // pattern12(n);
-    // pattern13(n);
-    // pattern14(n);
-    // pattern15(n);
-    // pattern16(n);
-    // pattern17(n);
-    // pattern18(n);
-    // pattern19(n);
-    // pattern20(n);
-    // pattern21(n);
-     pattern22(n);
+    pattern1(n);
+    pattern2(n);
+    pattern3(n);
+    pattern4(n);
+    pattern5(n);
+    pattern6(n);
+    pattern7(n);
+    pattern8(n);
+    pattern9(n);
+    pattern10(n);
+    pattern11(n);
+    pattern12(n);
+    pattern13(n);
+    pattern14(n);
+    pattern15(n);
+    pattern16(n);
+    pattern17(n);
+    pattern18(n);
+    pattern19(n);
+    pattern20(n);
+    pattern21(n);
+    pattern22(n);
 
     return 0;
 }
