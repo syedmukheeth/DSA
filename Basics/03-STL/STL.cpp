@@ -418,12 +418,10 @@ void explainExtra() {
 
 int main()
 {
-   printName();
-   int s;
-  s = sum(1, 2);
-   cout<<s;
-
-  * explainPair();
+    printName();
+    int s;
+    s = sum(1, 2);
+    cout<<s;
 
     return 0;
 }
