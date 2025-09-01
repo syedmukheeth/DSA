@@ -4,7 +4,7 @@ using namespace std;
 
 void printName()
 {
-    cout << "megh";
+    cout << "syed";
 }
 
 int sum(int a, int b)
@@ -389,12 +389,12 @@ void explainExtra()
 
 int main()
 {
-    // printName();
-    // int s;
-    // s = sum(1, 2);
-    // cout<<s;
+   printName();
+   int s;
+  s = sum(1, 2);
+   cout<<s;
 
-    //* explainPair();
+  * explainPair();
 
     return 0;
 }
