@@ -355,37 +355,66 @@ bool comp(pair<int, int> p1, pair<int, int> p2)
 }
 
 
-void explainExtra()
-{
-
-    sort(a, a + n);
-    sort(v.begin(), v.end());
-
-    sort(a_2, a + 4);
-    sort(a, a + n, greater<int>);
-
-    pair<int, int> a[] = {{1, 2}, {2, 1}, {4, 1}};
-    // sort it according to second element
-    // if second element is same, then sort
-    // it according to first elememt but in descending
-
-    sort(a, a + n, comp);
-    // {{4,1}, {2,1}, {1,2}}
-
-    int num = 7;
-    int cnt = __builtin_popcount();
-    long long num = 1234566743373;
-    int cnt = __builtin_popcountll();
-
-    string s = "123";
-    sort(s.begin(), s.end());
-    do
-    {
-        cout << s << endl;
-    } while (next_permutation(s.begin(), s.end()));
-    int maxx = *max_element(a, a + n);
+// Comparator for sorting pairs
+bool comp(pair<int, int> p1, pair<int, int> p2) {
+    if (p1.second == p2.second)
+        return p1.first > p2.first; // if seconds are same → sort by first (descending)
+    return p1.second < p2.second;   // otherwise sort by second (ascending)
 }
 
+void explainExtra() {
+    // -------------------------------
+    // Example array + vector
+    // -------------------------------
+    int a[] = {5, 2, 8, 1};
+    int n = 4;
+    vector<int> v = {5, 2, 8, 1};
+
+    // Sort whole array
+    sort(a, a + n);
+
+    // Sort whole vector
+    sort(v.begin(), v.end());
+
+    // Sort only part of array (from index 2 to 3)
+    sort(a + 2, a + 4);
+
+    // Sort in descending order
+    sort(a, a + n, greater<int>());
+
+    // -------------------------------
+    // Sorting array of pairs
+    // -------------------------------
+    pair<int, int> arr[] = {{1, 2}, {2, 1}, {4, 1}};
+    int m = 3;
+
+    sort(arr, arr + m, comp); 
+    // After sorting → {{4,1}, {2,1}, {1,2}}
+
+    // -------------------------------
+    // Built-in popcount usage
+    // -------------------------------
+    int num = 7;
+    int cnt = __builtin_popcount(num); // counts set bits in int
+
+    long long num2 = 1234566743373;
+    int cnt2 = __builtin_popcountll(num2); // counts set bits in long long
+
+    // -------------------------------
+    // All permutations of a string
+    // -------------------------------
+    string s = "123";
+    sort(s.begin(), s.end());
+    do {
+        cout << s << endl;
+    } while (next_permutation(s.begin(), s.end()));
+
+    // -------------------------------
+    // Find max element in array
+    // -------------------------------
+    int maxx = *max_element(a, a + n);
+    cout << "Max element: " << maxx << endl;
+}
 
 int main()
 {
