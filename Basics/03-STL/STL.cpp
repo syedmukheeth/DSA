@@ -50,8 +50,8 @@ void explainVector()
 
     // by normal method
 
-    cout << vecc[0] << vecc.at(0);
-    cout << vecc.back() << " ";
+    cout<< vec[0] << vec.at(0);
+    cout<< vec.back() << " ";
 
     // by iterator
 
