@@ -354,13 +354,12 @@ bool comp(pair<int, int> p1, pair<int, int> p2)
     return false;
 }
 
-
-// Comparator for sorting pairs
-bool comp(pair<int, int> p1, pair<int, int> p2) {
-    if (p1.second == p2.second)
-        return p1.first > p2.first; // if seconds are same → sort by first (descending)
-    return p1.second < p2.second;   // otherwise sort by second (ascending)
-}
+/*bool comp(pair<int, int> p1, pair<int, int> p2) {
+    if (p1.second == p2.second) {
+        return p1.first > p2.first; // descending by first if seconds equal
+    }
+    return p1.second < p2.second;   // ascending by second
+}*/
 
 void explainExtra() {
     // -------------------------------
@@ -418,10 +417,7 @@ void explainExtra() {
 
 int main()
 {
-    printName();
-    int s;
-    s = sum(1, 2);
-    cout<<s;
+   
 
     return 0;
 }
