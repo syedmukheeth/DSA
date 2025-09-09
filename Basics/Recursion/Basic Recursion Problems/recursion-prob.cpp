@@ -119,7 +119,7 @@ int main()
     //     reverseArray(0,arr,n);
     // for(int i=0; i<n;i++) cout<<arr[i]<<" ";
 
-    // string s = "madsam";
+    // string s = "syed";
     // cout<<stringPalindrome(0,s);
     cout<<fibonacciSeries(n);
     return 0;
