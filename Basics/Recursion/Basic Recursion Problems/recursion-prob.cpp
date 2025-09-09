@@ -7,7 +7,7 @@ void printName(int i, int n)
 {
     if (i > n)
         return;
-    cout << "megh" << endl;
+    cout << "syed" << endl;
     printName(i + 1, n);
 }
 
@@ -21,12 +21,12 @@ void print1toN(int i, int n)
 }
 
 // Q3
-void printNto1(int i, int n)
+void printNto1(int i)//take i value as input like 5 to print from 5 to 1
 {
     if (i < 1)
         return;
     cout << i << endl;
-    printNto1(i - 1, n);
+    printNto1(i - 1);
 }
 
 // Q4 by Back Tracking
@@ -81,7 +81,7 @@ int fact(int n)
 // Q8 Reverse an array
 
 void reverseArray(int i, int arr[], int n){
-   if(i>=2) return;
+   if(i>=n/2) return;
    swap(arr[i], arr[n-i-1]);
    reverseArray(i+1, arr,n);
 }
