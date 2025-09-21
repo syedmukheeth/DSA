@@ -14,31 +14,34 @@ void selection_sort(int arr[], int n)
             {
                 min = j;
             }
-            int temp = arr[min];
+            
+        }
+        int temp = arr[min];
             arr[min] = arr[i];
             arr[i] = temp;
-        }
     }
 }
 
 
 // bubble sort 
 
-void bubble_sort(int arr[], int n){
-    for(int i=n-1; i>=0; i--){
-        int did_Swap = 0;
-        for(int j = 0; j<=i-1; j++){
-            if(arr[j]>arr[j+1]){
-                    int temp = arr[j+1];
-                    arr[j+1] = arr[j];
-                    arr[j] = temp;
-                    did_Swap = 1;
+void bubbleSort(int arr[], int n) {
+    for (int i = 0; i < n - 1; i++) {          //pass counter: how many full scans we've done
+        bool swapped = false;                  //optimization flag to stop early if array already sorted
+
+        // inner loop: compare adjacent pairs up to the last unsorted element
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {        // if pair is out of order
+                swap(arr[j], arr[j + 1]);     // swap adjacent elements
+                swapped = true;               // mark that we did a swap this pass
             }
         }
-        if(did_Swap==0) break;
-        cout<<"runs\n";
+
+        // if we didn't swap any elements in this pass, the array is already sorted
+        if (!swapped) break;
     }
 }
+
 
 // insertion sort
 
@@ -68,7 +71,7 @@ int main()
 
     // bubble_sort(arr,n);
 
-    insertion_sort(arr,n);
+    //insertion_sort(arr,n);
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
