@@ -23,19 +23,36 @@ APPROACH
 // CODE:-
 int print2largest(int arr[], int n)
 {
-    int prev = -1, curr = arr[0];
+    int secondLargest = -1, largest = arr[0];
     for (int i = 1; i < n; i++)
     {
-        if (arr[i] > curr)
+        if (arr[i] > largest)
         {
-            prev = curr;
-            curr = arr[i];
+            secondLargest = largest;
+            largest = arr[i];
         }
-        else if (arr[i] > prev && arr[i] != curr)
-            prev = arr[i];
+        else if (arr[i] > secondLargest && arr[i] != largest)
+            secondLargest = arr[i];
     }
-    return prev;
+    return secondLargest;
+}
+//second smallest element in array
+int print2smallest(int arr[], int n)
+{
+    int secondSmallest = -1, smallest = arr[0];
+    for (int i = 1; i < n; i++)
+    {
+        if (arr[i] < smallest)
+        {
+            secondSmallest = smallest;
+            smallest = arr[i];
+        }
+        else if ((arr[i] < secondSmallest && arr[i] != smallest) || (secondSmallest == -1 && arr[i] > smallest))
+            secondSmallest = arr[i];
+    }
+    return secondSmallest;
 }
 
+
 // TIME COMPLEXITY = O(N)
-// SPACE COMPLEXITY = O(0)
+// SPACE COMPLEXITY = O(1)

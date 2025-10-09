@@ -33,4 +33,4 @@ int largest(int arr[], int n)
 }
 
 // TIME COMPLEXITY = O(N)
-// SPACE COMPLEXITY = O(0)
+// SPACE COMPLEXITY = O(1)
