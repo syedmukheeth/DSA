@@ -50,3 +50,61 @@ void moveZeroes(vector<int> &nums)
 
 // TIME COMPLEXITY = O(N) (as we moving j throught the array only once)
 // SPACE COMPLEXITY = O(1)
+----------------------------------------------------------------
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void moveZeroesBrute(vector<int>& nums) {
+    int n = nums.size();
+    vector<int> temp;
+
+    // Step 1: Copy non-zero elements
+    for (int num : nums) {
+        if (num != 0)
+            temp.push_back(num);
+    }
+
+    // Step 2: Fill remaining with zeros
+    while (temp.size() < n) {
+        temp.push_back(0);
+    }
+
+    // Step 3: Copy back to original array
+    nums = temp;
+}
+
+int main() {
+    vector<int> nums = {0, 1, 0, 3, 12};
+    moveZeroesBrute(nums);
+
+    cout << "After moving zeros: ";
+    for (int x : nums) cout << x << " ";
+}
+
+----------------------------------------------------------------
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void moveZeroesOptimal(vector<int>& nums) {
+    int j = 0; // position for next non-zero
+
+    // Traverse array
+    for (int i = 0; i < nums.size(); i++) {
+        if (nums[i] != 0) {
+            // Swap current non-zero with position j
+            swap(nums[i], nums[j]);
+            j++;
+        }
+    }
+}
+
+int main() {
+    vector<int> nums = {0, 1, 0, 3, 12};
+    moveZeroesOptimal(nums);
+
+    cout << "After moving zeros: ";
+    for (int x : nums) cout << x << " ";
+}

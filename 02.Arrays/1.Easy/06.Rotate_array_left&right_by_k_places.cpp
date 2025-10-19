@@ -85,7 +85,7 @@ void Rotateeletoright(int arr[], int n, int k)
   // Reverse whole array
   Reverse(arr, 0, n - 1);
 }
-QUESTION:-
+/*QUESTION:-
 
 Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 
